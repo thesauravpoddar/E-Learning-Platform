@@ -43,7 +43,7 @@ public class Author {
     private int age;
 
     @ManyToMany(mappedBy = "authors")
-    private List<course> courses;
+    private List<Course> courses;
 
     private LocalDateTime createdAt;
 

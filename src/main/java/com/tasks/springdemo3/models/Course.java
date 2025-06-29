@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity
-public class course {
+public class Course {
 
     @Id
     @GeneratedValue
@@ -35,4 +35,8 @@ public class course {
             }
     )
     private List<Author> authors;
+
+    // 1 course have many sections
+    @OneToMany(mappedBy = "course")
+    private List<Section> sections;
 }
