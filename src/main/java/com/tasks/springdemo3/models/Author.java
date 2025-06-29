@@ -7,8 +7,9 @@ import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
-@Table(name = "AUTHOR_TBL")
 public class Author {
 
     @Id
@@ -41,10 +42,6 @@ public class Author {
 
     private int age;
 
-    @Column(
-            updatable = false,
-            nullable = false
-    )
     private LocalDateTime createdAt;
 
     @Column(
