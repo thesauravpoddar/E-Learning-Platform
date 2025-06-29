@@ -2,8 +2,8 @@ package com.tasks.springdemo3.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -42,11 +42,13 @@ public class Author {
 
     private int age;
 
+    @ManyToMany(mappedBy = "authors")
+    private List<course> courses;
+
     private LocalDateTime createdAt;
 
-    @Column(
-            insertable = false
-    )
     private LocalDateTime lastModified;
+
+
 
 }
