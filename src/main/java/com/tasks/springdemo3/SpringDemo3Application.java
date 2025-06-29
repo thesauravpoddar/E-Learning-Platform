@@ -10,4 +10,19 @@ public class SpringDemo3Application {
         SpringApplication.run(SpringDemo3Application.class, args);
     }
 
+    /*@Bean
+    public CommandLineRunner commandLineRunner(
+        AuthorRepository repository
+    ) {
+        return args -> {
+          var author = Author.builder()
+                  .firstName("saurav")
+                  .lastName("poddar")
+                  .age(20)
+                  .email("wehfyu@gmail.com")
+                  .build();
+          repository.save(author);
+        };
+    }*/
+
 }
