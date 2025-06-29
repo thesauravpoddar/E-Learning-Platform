@@ -2,18 +2,17 @@ package com.tasks.springdemo3.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.time.LocalDateTime;
+import lombok.experimental.SuperBuilder;
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
-public class Author {
+public class Author extends BaseEntity{
 
-    @Id
-    @GeneratedValue
            /* (
             strategy = GenerationType.SEQUENCE,
             generator = "author_sequence"
@@ -24,7 +23,6 @@ public class Author {
             sequenceName = "author_sequence",
             allocationSize = 1
     )*/
-    private Integer id;
 
     @Column(
             name = "f_name",
@@ -44,10 +42,6 @@ public class Author {
 
     @ManyToMany(mappedBy = "authors")
     private List<Course> courses;
-
-    private LocalDateTime createdAt;
-
-    private LocalDateTime lastModified;
 
 
 
