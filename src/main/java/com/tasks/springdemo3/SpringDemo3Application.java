@@ -1,7 +1,7 @@
 package com.tasks.springdemo3;
 
+import net.datafaker.Faker;
 import com.tasks.springdemo3.models.Author;
-import com.tasks.springdemo3.models.Video;
 import com.tasks.springdemo3.repository.AuthorRepository;
 import com.tasks.springdemo3.repository.VideoRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -22,18 +22,22 @@ public class SpringDemo3Application {
         VideoRepository videoRepository
     ) {
         return args -> {
-         /* var author = Author.builder()
-                  .firstName("saurav")
-                  .lastName("poddar")
-                  .age(20)
-                  .email("wehfyu@gmail.com")
-                  .build();
-          repository.save(author);*/
-            var video = Video.builder()
+            /*for (int i = 0; i < 50; i++) {
+                Faker faker = new Faker();
+                var author = Author.builder()
+                        .firstName(faker.name().firstName())
+                        .lastName(faker.name().lastName())
+                        .age(faker.number().numberBetween(19 , 50))
+                        .email("wehfy" + i + "@gmail.com")
+                        .build();
+                repository.save(author);
+            }*/
+
+            /*var video = Video.builder()
                     .name("abs")
                     .length(6)
                     .build();
-            videoRepository.save(video);
+            videoRepository.save(video);*/
         };
     }
 

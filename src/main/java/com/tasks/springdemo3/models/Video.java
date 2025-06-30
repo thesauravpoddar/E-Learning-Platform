@@ -15,7 +15,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
-@PrimaryKeyJoinColumn(name = "video_id") // to give special name to an entity that will be shown in database table
+//@PrimaryKeyJoinColumn(name = "video_id") // to give special name to an entity that will be shown in database table
 //@DiscriminatorValue("V")
 public class Video extends Resources{
     private int length;
